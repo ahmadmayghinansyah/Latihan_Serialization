@@ -1,0 +1,13 @@
+	=======		PERBEDAAN ANTARA DATA MEMBER YANG MENGGUNAKAN/TIDAK MENGGUNAKAN KEYWORD/ACCESS MODIEFIER	=======
+
+
+
+1. Serialization tanpa menggunakan keyword/access modifier transient, static, dan final akan mengambil semua data member dari sebuah objek dan menyimpannya ke dalam file serial. Ini berarti semua data member akan disertakan dalam proses serialisasi.
+
+2. Ketika menggunakan keyword/access modifier transient, static, dan final, terjadi perbedaan dalam serialisasi
+	
+	> transient : data member yang ditandai sebagai transient tidak akan disertakan dalam proses serialisasi. Ketika ada data member yang tidak ingin disimpan dalam file serial, misalnya data member yang sifatnya temporary atau data yang dapat di-generate kembali.
+
+	> static : Data member yang ditandai sebagai static juga tidak akan disertakan dalam proses serialisasi. Ini karena data member static terkait dengan kelas itu sendiri, bukan dengan objek.
+
+	> final : Data member yang ditandai sebagai final tidak mempengaruhi proses serialisasi secara langsung, namun, karena nilainya tidak dapat diubah setelah inisialisasi, nilai final akan tetap konsisten selama objek tersebut di-serialisasi dan di-deserialisasi.
